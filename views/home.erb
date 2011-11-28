@@ -1,0 +1,28 @@
+<section>
+  <div class="row">
+    <div class="span16">
+      <% unless signed_in? %>
+        <h3>Sign in first to explore the provider's API</h3>
+        <p><a href="/sign_in" class="btn primary">Sign in with OAuth 2 provider »</a></p>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="row">
+    <div class="span16">
+      <% if signed_in? %>
+        <h2>Explore the API</h2>
+
+        <div class="well">
+          <a href="/explore/me.json" class="btn" data-explore>My Credentials</a>
+          <a href="/explore/profiles.json" class="btn" data-explore>Profiles</a>
+          <a href="/sign_out" class="btn primary">Sign out</a>
+        </div>
+
+        <p><pre id="display-json">Select one of the api methods above</pre></p>
+      <% end %>
+    </div>
+  </div>
+</section>
