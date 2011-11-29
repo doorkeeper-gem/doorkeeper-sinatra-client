@@ -24,7 +24,7 @@ If you have your own provider or you are using [this example](http://doorkeeper-
 
 ### Environment variables
 
-You need to setup few environment variables in order to your client work. You can either set the variables in you environment:
+You need to setup few environment variables in order to make the client work. You can either set the variables in you environment:
 
     export OAUTH2_CLIENT_ID           = "129477f..."
     export OAUTH2_CLIENT_SECRET       = "c1eec90..."
