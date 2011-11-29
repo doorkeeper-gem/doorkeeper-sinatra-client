@@ -5,3 +5,15 @@ body {
 section > .row {
   margin-bottom: 10px;
 }
+
+.row h2 {
+  margin-bottom: 10px;
+}
+
+.row h3 {
+  margin-bottom: 7px;
+}
+
+pre > code {
+  background-color: transparent;
+}

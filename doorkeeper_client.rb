@@ -1,4 +1,5 @@
 require "sinatra/base"
+require "./lib/html_renderer"
 
 # Load custom environment variables
 load 'env.rb' if File.exists?('env.rb')
@@ -12,6 +13,16 @@ class DoorkeeperClient < Sinatra::Base
 
     def signed_in?
       !session[:access_token].nil?
+    end
+
+    def markdown(text)
+      options  = { :autolink => true, :space_after_headers => true, :fenced_code_blocks => true }
+      markdown = Redcarpet::Markdown.new(HTMLRenderer, options)
+      markdown.render(text)
+    end
+
+    def markdown_readme
+      markdown(File.read(File.join(File.dirname(__FILE__), "README.md")))
     end
   end
 

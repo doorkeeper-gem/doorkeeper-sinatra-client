@@ -1,4 +1,4 @@
-<section>
+<section id="explore">
   <div class="row">
     <div class="span16">
       <% unless signed_in? %>
@@ -23,6 +23,14 @@
 
         <p><pre id="display-json">Select one of the api methods above</pre></p>
       <% end %>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="row">
+    <div class="span16">
+    <%= markdown_readme %>
     </div>
   </div>
 </section>
