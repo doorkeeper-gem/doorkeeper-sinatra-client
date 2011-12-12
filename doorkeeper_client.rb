@@ -40,7 +40,7 @@ class DoorkeeperClient < Sinatra::Base
   end
 
   def access_token
-    OAuth2::AccessToken.new(client, session[:access_token])
+    OAuth2::AccessToken.new(client, session[:access_token], :refresh_token => session[:refresh_token])
   end
 
   def redirect_uri
@@ -63,7 +63,15 @@ class DoorkeeperClient < Sinatra::Base
 
   get '/callback' do
     new_token = client.auth_code.get_token(params[:code], :redirect_uri => redirect_uri)
-    session[:access_token] = new_token.token
+    session[:access_token]  = new_token.token
+    session[:refresh_token] = new_token.refresh_token
+    redirect '/'
+  end
+
+  get '/refresh' do
+    new_token = access_token.refresh!
+    session[:access_token]  = new_token.token
+    session[:refresh_token] = new_token.refresh_token
     redirect '/'
   end
 

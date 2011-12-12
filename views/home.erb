@@ -21,7 +21,7 @@
           <a href="/sign_out" class="btn primary">Sign out</a>
         </div>
 
-        <p>Your access token: <code><%= session[:access_token] %></code></p>
+        <p>Your access token: <code><%= session[:access_token] %></code> (<a href="/refresh" title="<%= session[:refresh_token] %>">refresh</a>)</p>
 
         <p><pre id="display-json">Select one of the api methods above</pre></p>
       <% end %>
