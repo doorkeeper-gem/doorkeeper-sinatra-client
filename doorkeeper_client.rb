@@ -11,6 +11,10 @@ class DoorkeeperClient < Sinatra::Base
     include Rack::Utils
     alias_method :h, :escape_html
 
+    def pretty_json(json)
+      JSON.pretty_generate(json)
+    end
+
     def signed_in?
       !session[:access_token].nil?
     end
@@ -68,7 +72,7 @@ class DoorkeeperClient < Sinatra::Base
       response = access_token.get("/api/v1/#{params[:api]}")
       @json = JSON.parse(response.body)
       erb :explore, :layout => !request.xhr?
-    rescue Exception => @error
+    rescue OAuth2::Error => @error
       erb :error, :layout => !request.xhr?
     end
   end
