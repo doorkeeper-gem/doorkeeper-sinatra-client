@@ -30,7 +30,7 @@ class DoorkeeperClient < Sinatra::Base
     OAuth2::Client.new(
       ENV['OAUTH2_CLIENT_ID'],
       ENV['OAUTH2_CLIENT_SECRET'],
-      :site         => "http://doorkeeper-provider.herokuapp.com",
+      :site         => ENV['SITE'] || "http://doorkeeper-provider.herokuapp.com",
       :token_method => token_method,
     )
   end
