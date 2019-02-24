@@ -28,6 +28,10 @@ class DoorkeeperClient < Sinatra::Base
     def markdown_readme
       markdown(File.read(File.join(File.dirname(__FILE__), "README.md")))
     end
+
+    def site_host
+      URI.parse(ENV['SITE']).host
+    end
   end
 
   def client(token_method = :post)
