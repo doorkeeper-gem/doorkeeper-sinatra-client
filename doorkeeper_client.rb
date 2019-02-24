@@ -62,10 +62,14 @@ class DoorkeeperClient < Sinatra::Base
   end
 
   get '/callback' do
-    new_token = client.auth_code.get_token(params[:code], :redirect_uri => redirect_uri)
-    session[:access_token]  = new_token.token
-    session[:refresh_token] = new_token.refresh_token
-    redirect '/'
+    if params[:error]
+      erb :callback_error, :layout => !request.xhr?
+    else
+      new_token = client.auth_code.get_token(params[:code], :redirect_uri => redirect_uri)
+      session[:access_token]  = new_token.token
+      session[:refresh_token] = new_token.refresh_token
+      redirect '/'
+    end
   end
 
   get '/refresh' do
