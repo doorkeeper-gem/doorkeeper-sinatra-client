@@ -1,33 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Doorkeeper OAuth 2 Client (Sinatra)</title>
-  <link type="text/css" rel="stylesheet" media="screen" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
-  <link type="text/css" rel="stylesheet" media="screen" href="/application.css">
-</head>
-<body>
-  <div class="topbar" data-scrollspy="scrollspy">
-    <div class="fill">
-      <div class="container">
-        <a class="brand" href="/">Sinatra Client</a>
-        <ul class="nav">
-          <li><a href="#explore">Explore the API</a></li>
-          <li><a href="#about-doorkeeper-gem">About the Gem</a></li>
-          <li><a href="#installation">Installation</a></li>
-          <li><a href="#configuration">Configuration</a></li>
-          <li><a href="#client-application">Client Application</a></li>
-          <li><a href="#environment-variables">Environment Variables</a></li>
-          <li><a href="#start-the-server">Server</a></li>
-        </ul>
-      </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Doorkeeper OAuth 2 Client (Sinatra)</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand mb-0 h1" href="/">Doorkeeper Sinatra Example Client</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="#explore">Explore the API</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about-doorkeeper-gem">About the Gem</a></li>
+            <li class="nav-item"><a class="nav-link" href="#installation">Installation</a></li>
+            <li class="nav-item"><a class="nav-link" href="#configuration">Configuration</a></li>
+            <li class="nav-item"><a class="nav-link" href="#client-application">Client Application</a></li>
+            <li class="nav-item"><a class="nav-link" href="#environment-variables">Environment Variables</a></li>
+            <li class="nav-item"><a class="nav-link" href="#start-the-server">Server</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="container py-md-3">
+        <div class="row">
+          <div class="col">
+            <%= yield %>
+          </div>
+        </div>
+      </main>
     </div>
-  </div>
-  <div class="container">
-    <%= yield %>
-  </div>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-buttons.min.js"></script>
-  <script src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-scrollspy.js"></script>
-  <script src="/application.js"></script>
-</body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/application.js"></script>
+  </body>
 </html>

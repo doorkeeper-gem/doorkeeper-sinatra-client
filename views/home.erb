@@ -1,38 +1,42 @@
-<section id="explore">
-  <div class="row">
-    <div class="span16">
-      <% unless signed_in? %>
-        <h3>Sign in first to explore the provider's API</h3>
-        <p><a href="/sign_in" class="btn primary">Sign in with OAuth 2 provider »</a></p>
-      <% end %>
-    </div>
-  </div>
-</section>
+<% unless signed_in? %>
+  <h2>Getting started</h2>
 
-<section>
-  <div class="row">
-    <div class="span16">
-      <% if signed_in? %>
-        <h2>Explore the API</h2>
+  <p>In order to test the client, you'll need to login in <code><%= site_host %></code>.</p>
+  <p>
+    You will be prompted for an username and password. Use <code>user@example.com</code> and
+    <code>doorkeeper</code> or create your own user.</p>
 
-        <div class="well">
-          <a href="/explore/me.json" class="btn" data-explore>My Credentials</a>
-          <a href="/explore/profiles.json" class="btn" data-explore>Profiles</a>
-          <a href="/sign_out" class="btn primary">Sign out</a>
-        </div>
+  <p>
+    <% unless signed_in? %>
+    <a href="/sign_in" class="btn btn-success" role="button">
+      Sign in on <%= site_host %>
+    </a>
+    <% end %>
+  </p>
+<% else %>
+  <h2>Explore the API</h2>
 
-        <p>Your access token: <code><%= session[:access_token] %></code> (<a href="/refresh" title="<%= session[:refresh_token] %>">refresh</a>)</p>
+  <p>Congratulations! You just authorized this client to fetch data from <code><%= site_host %></code> using OAuth2.</p>
+  <p>Click on the buttons below to explore <code><%= site_host %></code> API</p>
 
-        <p><pre id="display-json">Select one of the api methods above</pre></p>
-      <% end %>
-    </div>
-  </div>
-</section>
+  <p>
+    <a class="btn btn-outline-primary" href="/explore/me.json" data-explore>My Credentials</a>
+    <a class="btn btn-outline-primary" href="/explore/profiles.json" data-explore>Profiles</a>
+    <a class="btn btn-outline-secondary" href="/sign_out" class="btn primary">Sign out</a>
+  </p>
 
-<section>
-  <div class="row">
-    <div class="span16">
-    <%= markdown_readme %>
-    </div>
-  </div>
-</section>
+  <p id="display-json">Click on the buttons above, the response will show here.</p>
+
+  <p>Your access token: <code><%= session[:access_token] %></code></p>
+  <p><a class="btn btn-outline-secondary" href="/refresh" title="<%= session[:refresh_token] %>">Refresh Access Token</a></p>
+<% end %>
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseReadme" aria-expanded="false" aria-controls="collapseExample">
+    See how this client works
+  </button>
+</p>
+
+<div class="collapse" id="collapseReadme">
+  <%= markdown_readme %>
+</div>

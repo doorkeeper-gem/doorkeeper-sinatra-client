@@ -28,6 +28,10 @@ class DoorkeeperClient < Sinatra::Base
     def markdown_readme
       markdown(File.read(File.join(File.dirname(__FILE__), "README.md")))
     end
+
+    def site_host
+      URI.parse(ENV['SITE']).host
+    end
   end
 
   def client(token_method = :post)
@@ -73,11 +77,17 @@ class DoorkeeperClient < Sinatra::Base
   end
 
   get '/refresh' do
-    new_token = access_token.refresh!
-    session[:access_token]  = new_token.token
-    session[:refresh_token] = new_token.refresh_token
-    redirect '/'
-  end
+    begin
+      new_token = access_token.refresh!
+      session[:access_token]  = new_token.token
+      session[:refresh_token] = new_token.refresh_token
+      redirect '/'
+    rescue OAuth2::Error => @error
+      erb :error, :layout => !request.xhr?
+    rescue StandardError => _error
+      redirect '/'
+    end
+end
 
   get '/explore/:api' do
     raise "Please call a valid endpoint" unless params[:api]

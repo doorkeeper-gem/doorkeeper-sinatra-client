@@ -1,2 +1,9 @@
-<p><code>OAuth2::Error</code></p>
-<%= h @error.response.inspect %>
+<h3>OAuth2::Error</h3>
+<p>Response Headers:</p>
+<pre>
+<% @error.response.response.headers.each do |k, v| %>
+ <%= k %>: <%= v %>
+<% end %>
+</pre>
+<p>Response Body:</p>
+<pre><%= h @error.response.response.body %></pre>

@@ -44,4 +44,4 @@ or set them in a file named `env.rb` in the app's root. This file is loaded auto
 
 Fire up the server with:
 
-    rackup config.ru
+    bundle exec rackup config.ru
