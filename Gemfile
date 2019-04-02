@@ -5,11 +5,11 @@ source 'https://rubygems.org'
 ruby '2.6.2'
 
 gem 'oauth2'
-gem 'pry'
 gem 'puma'
 gem 'redcarpet'
 gem 'sinatra'
 
 group :development do
+  gem 'pry'
   gem 'rubocop'
 end
