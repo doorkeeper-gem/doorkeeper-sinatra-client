@@ -1,9 +1,11 @@
-<h3>OAuth2::Error</h3>
+<h3><%= h @error.inspect %></h3>
 <p>Response Headers:</p>
-<pre>
-<% @error.response.response.headers.each do |k, v| %>
- <%= k %>: <%= v %>
+<% if @error.respond_to?(:response) %>
+  <pre>
+  <% @error.response.response.headers.each do |k, v| %>
+  <%= k %>: <%= v %>
+  <% end %>
+  </pre>
+  <p>Response Body:</p>
+  <pre><%= h @error.response.response.body || "empty" %></pre>
 <% end %>
-</pre>
-<p>Response Body:</p>
-<pre><%= h @error.response.response.body %></pre>

@@ -56,7 +56,7 @@ class DoorkeeperClient < Sinatra::Base
   end
 
   get '/sign_in' do
-    scope = params[:scope] || "public"
+    scope = params[:scope] || "read"
     redirect client.auth_code.authorize_url(:redirect_uri => redirect_uri, :scope => scope)
   end
 
@@ -84,8 +84,8 @@ class DoorkeeperClient < Sinatra::Base
       redirect '/'
     rescue OAuth2::Error => @error
       erb :error, :layout => !request.xhr?
-    rescue StandardError => _error
-      redirect '/'
+    rescue StandardError => @error
+      erb :error, :layout => !request.xhr?
     end
 end
 
