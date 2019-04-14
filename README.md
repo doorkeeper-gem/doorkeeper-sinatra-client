@@ -1,5 +1,7 @@
 # Doorkeeper Sinatra Client
 
+[![Build Status](https://semaphoreci.com/api/v1/doorkeeper-gem/doorkeeper-sinatra-client/branches/master/badge.svg)](https://semaphoreci.com/doorkeeper-gem/doorkeeper-sinatra-client)
+
 This app is an example of OAuth 2 client. It was built in order to test the [doorkeeper provider example](http://doorkeeper-provider.herokuapp.com/). It uses [oauth2](https://github.com/intridea/oauth2) and [sinatra](http://www.sinatrarb.com/) gems. Check out the [live app here](http://doorkeeper-sinatra.herokuapp.com/). The source code is, as always, [available on GitHub](https://github.com/applicake/doorkeeper-sinatra-client).
 
 ## About Doorkeeper Gem
