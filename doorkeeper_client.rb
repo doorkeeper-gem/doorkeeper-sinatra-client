@@ -6,7 +6,14 @@ require './lib/html_renderer'
 # Load custom environment variables
 load 'env.rb' if File.exist?('env.rb')
 
+Rollbar.configure do |config|
+  config.access_token = ENV['ROLLBAR_ACCESS_TOKEN']
+end
+
 class DoorkeeperClient < Sinatra::Base
+  require 'rollbar/middleware/sinatra'
+  use Rollbar::Middleware::Sinatra
+
   enable :sessions
 
   helpers do

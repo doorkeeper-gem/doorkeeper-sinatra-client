@@ -7,6 +7,7 @@ ruby '2.6.2'
 gem 'oauth2'
 gem 'puma'
 gem 'redcarpet'
+gem 'rollbar'
 gem 'sinatra'
 
 group :development do
