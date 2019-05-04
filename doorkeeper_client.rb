@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'sinatra/base'
+require 'securerandom'
 require './lib/html_renderer'
 
 # Load custom environment variables
@@ -26,6 +27,17 @@ class DoorkeeperClient < Sinatra::Base
 
     def signed_in?
       !session[:access_token].nil?
+    end
+
+    def state_matches?
+      return false if blank?(params[:state])
+      return false if blank?(session[:state])
+      params[:state] == session[:state]
+    end
+
+    def blank?(string)
+      return true if string.nil?
+      /\A[[:space:]]*\z/.match?(string.to_s)
     end
 
     def markdown(text)
@@ -65,8 +77,9 @@ class DoorkeeperClient < Sinatra::Base
   end
 
   get '/sign_in' do
+    session[:state] = SecureRandom.hex
     scope = params[:scope] || 'read'
-    redirect client.auth_code.authorize_url(redirect_uri: redirect_uri, scope: scope)
+    redirect client.auth_code.authorize_url(redirect_uri: redirect_uri, scope: scope, state: session[:state])
   end
 
   get '/sign_out' do
@@ -78,6 +91,11 @@ class DoorkeeperClient < Sinatra::Base
     if params[:error]
       erb :callback_error, layout: !request.xhr?
     else
+      if !state_matches?
+        redirect '/'
+        return
+      end
+
       new_token = client.auth_code.get_token(params[:code], redirect_uri: redirect_uri)
       session[:access_token]  = new_token.token
       session[:refresh_token] = new_token.refresh_token
