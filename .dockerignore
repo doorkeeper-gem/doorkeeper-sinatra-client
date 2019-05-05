@@ -1,0 +1,6 @@
+.env
+.semaphore-cache
+.vscode
+.rspec
+log
+tmp

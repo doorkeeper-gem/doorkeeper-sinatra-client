@@ -3,6 +3,7 @@ GEM
   specs:
     ast (2.4.0)
     coderay (1.1.2)
+    dotenv (2.7.2)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     jaro_winkler (1.5.2)
@@ -50,6 +51,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   oauth2
   pry
   puma

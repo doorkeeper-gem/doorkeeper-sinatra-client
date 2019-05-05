@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 ruby '2.6.3'
 
+gem 'dotenv'
 gem 'oauth2'
 gem 'puma'
 gem 'redcarpet'
