@@ -30,7 +30,7 @@ GEM
       rack
     rainbow (3.0.0)
     redcarpet (3.4.0)
-    rollbar (2.19.3)
+    rollbar (2.19.4)
       multi_json
     rubocop (0.68.1)
       jaro_winkler (~> 1.5.1)
