@@ -28,19 +28,26 @@ If you have your own provider or you are using [this example](http://doorkeeper-
 
 You need to setup few environment variables in order to make the client work. You can either set the variables in you environment:
 
-    export OAUTH2_CLIENT_ID           = "129477f..."
-    export OAUTH2_CLIENT_SECRET       = "c1eec90..."
-    export OAUTH2_CLIENT_REDIRECT_URI = "http://localhost:9393/callback"
-    export SITE = "http://you-server-app.com"
+    export PUBLIC_CLIENT_ID                 = "129477f..."
+    export PUBLIC_CLIENT_REDIRECT_URI       = "c1eec90..."
 
+    export CONFIDENTIAL_CLIENT_ID           = "129477f..."
+    export CONFIDENTIAL_CLIENT_SECRET       = "c1eec90..."
+    export CONFIDENTIAL_CLIENT_REDIRECT_URI = "http://localhost:9393/callback"
 
-or set them in a file named `env.rb` in the app's root. This file is loaded automatically by the app.
+    export PROVIDER_URL = "http://you-server-app.com"
 
-    # env.rb
-    ENV['OAUTH2_CLIENT_ID']           = "129477f..."
-    ENV['OAUTH2_CLIENT_SECRET']       = "c1eec90..."
-    ENV['OAUTH2_CLIENT_REDIRECT_URI'] = "http://localhost:9393/callback"
-    ENV['SITE']                       = "http://you-server-app.com"
+or set them in a file named `.env` in the app's root. This file is loaded automatically by the app.
+
+    # .env
+    PUBLIC_CLIENT_ID                 = "129477f..."
+    PUBLIC_CLIENT_REDIRECT_URI       = "c1eec90..."
+
+    CONFIDENTIAL_CLIENT_ID           = "129477f..."
+    CONFIDENTIAL_CLIENT_SECRET       = "c1eec90..."
+    CONFIDENTIAL_CLIENT_REDIRECT_URI = "http://localhost:9393/callback"
+
+    PROVIDER_URL = "http://you-server-app.com"
 
 ## Start the server
 
