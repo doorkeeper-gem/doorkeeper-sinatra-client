@@ -33,13 +33,13 @@ GEM
     redcarpet (3.4.0)
     rollbar (2.19.4)
       multi_json
-    rubocop (0.68.1)
+    rubocop (0.69.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
-      parser (>= 2.5, != 2.5.1.1)
+      parser (>= 2.6)
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 1.6)
+      unicode-display_width (>= 1.4.0, < 1.7)
     ruby-progressbar (1.10.0)
     sinatra (2.0.5)
       mustermann (~> 1.0)
@@ -47,7 +47,7 @@ GEM
       rack-protection (= 2.0.5)
       tilt (~> 2.0)
     tilt (2.0.9)
-    unicode-display_width (1.5.0)
+    unicode-display_width (1.6.0)
 
 PLATFORMS
   ruby
