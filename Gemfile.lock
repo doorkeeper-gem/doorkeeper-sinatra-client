@@ -33,7 +33,7 @@ GEM
     redcarpet (3.4.0)
     rollbar (2.19.4)
       multi_json
-    rubocop (0.69.0)
+    rubocop (0.70.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.6)
