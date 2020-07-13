@@ -3,7 +3,7 @@ GEM
   specs:
     ast (2.4.1)
     coderay (1.1.2)
-    dotenv (2.7.5)
+    dotenv (2.7.6)
     faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
     jwt (2.2.1)
