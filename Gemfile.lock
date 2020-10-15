@@ -35,7 +35,7 @@ GEM
     redcarpet (3.5.0)
     regexp_parser (1.8.2)
     rexml (3.2.4)
-    rollbar (3.0.0)
+    rollbar (3.0.1)
     rubocop (0.93.1)
       parallel (~> 1.10)
       parser (>= 2.7.1.5)
