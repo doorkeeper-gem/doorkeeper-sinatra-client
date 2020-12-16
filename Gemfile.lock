@@ -32,7 +32,7 @@ GEM
     rack-protection (2.1.0)
       rack
     rainbow (3.0.0)
-    redcarpet (3.5.0)
+    redcarpet (3.5.1)
     regexp_parser (2.0.0)
     rexml (3.2.4)
     rollbar (3.1.1)
