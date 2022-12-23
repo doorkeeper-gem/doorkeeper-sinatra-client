@@ -38,7 +38,7 @@ GEM
     redcarpet (3.5.1)
     regexp_parser (2.6.1)
     rexml (3.2.5)
-    rollbar (3.3.2)
+    rollbar (3.3.3)
     rubocop (1.41.1)
       json (~> 2.3)
       parallel (~> 1.10)
