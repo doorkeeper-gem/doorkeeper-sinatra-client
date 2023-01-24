@@ -36,10 +36,10 @@ GEM
       rack
     rainbow (3.1.1)
     redcarpet (3.5.1)
-    regexp_parser (2.6.1)
+    regexp_parser (2.6.2)
     rexml (3.2.5)
     rollbar (3.3.3)
-    rubocop (1.43.0)
+    rubocop (1.44.0)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
