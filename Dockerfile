@@ -2,7 +2,7 @@ FROM ruby:2.6.3
 
 LABEL maintainer="felipe@yerba.dev"
 
-RUN gem install bundler:2.0.1
+RUN gem install bundler:2.4.22
 
 WORKDIR /usr/src/app
 
