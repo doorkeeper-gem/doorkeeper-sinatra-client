@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '2.6.3'
+ruby '3.3.12'
 
 gem 'dotenv'
 gem 'oauth2'
