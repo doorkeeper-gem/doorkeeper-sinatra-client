@@ -4,6 +4,8 @@
 
 This app is an example of OAuth 2 client. It was built in order to test the [doorkeeper provider example](http://doorkeeper-provider.herokuapp.com/). It uses [oauth2](https://github.com/intridea/oauth2) and [sinatra](http://www.sinatrarb.com/) gems. Check out the [live app here](http://doorkeeper-sinatra.herokuapp.com/). The source code is, as always, [available on GitHub](https://github.com/applicake/doorkeeper-sinatra-client).
 
+Demo app hosted on [Miget](https://miget.com).
+
 ## About Doorkeeper Gem
 
 For more information [about the gem](https://github.com/applicake/doorkeeper), [documentation](https://github.com/applicake/doorkeeper#readme), [wiki](https://github.com/applicake/doorkeeper/wiki/_pages) and another resources, check out the project [on GitHub](https://github.com/applicake/doorkeeper).
