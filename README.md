@@ -51,6 +51,8 @@ or set them in a file named `.env` in the app's root. This file is loaded automa
 
     PROVIDER_URL = "http://you-server-app.com"
 
+Optionally set `SESSION_SECRET` (e.g. the output of `ruby -rsecurerandom -e 'puts SecureRandom.hex(64)'`) to keep sessions valid across restarts and deploys. If it is not set, a random secret is generated every time the app boots.
+
 ## Start the server
 
 Fire up the server with:

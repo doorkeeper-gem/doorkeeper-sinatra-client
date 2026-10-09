@@ -36,14 +36,16 @@ GEM
       snaky_hash (~> 2.0, >= 2.0.7)
       version_gem (~> 1.1, >= 1.1.14)
     parallel (1.22.1)
-    parser (3.2.2.0)
+    parser (3.3.12.0)
       ast (~> 2.4.1)
+      racc
     pry (0.16.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
       reline (>= 0.6.0)
     puma (6.6.1)
       nio4r (~> 2.0)
+    racc (1.8.1)
     rack (2.2.24)
     rack-protection (3.2.0)
       base64 (>= 0.1.0)
@@ -95,7 +97,7 @@ DEPENDENCIES
   sinatra
 
 RUBY VERSION
-   ruby 2.6.3p62
+   ruby 3.3.12p206
 
 BUNDLED WITH
    2.4.22
